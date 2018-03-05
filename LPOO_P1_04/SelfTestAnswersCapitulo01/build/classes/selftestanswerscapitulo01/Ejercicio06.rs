@@ -1,0 +1,6 @@
+selftestanswerscapitulo01.Ejercicio06
+selftestanswerscapitulo01.Phone1
+selftestanswerscapitulo01.Phone2
+selftestanswerscapitulo01.Device
+selftestanswerscapitulo01.Phone3
+selftestanswerscapitulo01.Electronic

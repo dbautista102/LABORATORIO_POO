@@ -1,0 +1,2 @@
+selftestanswerscapitulo01.Animals
+selftestanswerscapitulo01.TestEnum
