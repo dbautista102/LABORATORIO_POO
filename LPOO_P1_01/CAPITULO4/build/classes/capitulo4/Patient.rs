@@ -1,2 +1,0 @@
-testpatient.Patient
-Patient

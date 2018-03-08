@@ -1,2 +1,0 @@
-Ejercicio03_1
-testbirdsighting.TestBirdSighting

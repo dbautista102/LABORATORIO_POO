@@ -1,2 +1,0 @@
-BirdSighting
-testbirdsighting.BirdSighting

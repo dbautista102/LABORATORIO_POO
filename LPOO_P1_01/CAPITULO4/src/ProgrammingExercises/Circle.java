@@ -11,27 +11,29 @@ import java.lang.Math;
  *
  * @author bautista
  */
+
 public class Circle {
-    private Integer radious;
-
-    public void setRadious(Integer radious) {
-        this.radious = radious;
-        this.diameter = this.radious*2;
-        this.area = java.lang.Math.PI * this.radious * this.radious;
-    }
-
-    public Integer getRadious() {
-        return radious;
-    }
-    private Integer diameter;
-    private double area;
-
-    public Circle() {
-        this.radious = 1;
-
-    }
-
-   
-    
-    
+	private Double radius;
+	private Double diameter;
+	private Double area;
+	public Circle() {
+		radius = 1.0;
+		diameter = radius*2;
+		area = Math.PI*Math.pow(radius, 2.0); 
+	}
+	public Double getRadius() {
+		return radius;
+	}
+	public Double getDiameter() {
+		return diameter;
+	}
+	public Double getArea() {
+		return area;
+	}
+	public void setRadius(Double radio) {
+		radius = radio;
+		diameter = radius*2;
+		area = Math.PI*Math.pow(radius, 2.0); 
+	}
 }
+

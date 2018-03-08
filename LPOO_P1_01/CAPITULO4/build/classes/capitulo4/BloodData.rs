@@ -1,2 +1,0 @@
-testblooddata.BloodData
-BloodData
