@@ -1,0 +1,6 @@
+2
+[AIRE] (0,0) ERROR
+[PIEL] (0,0) ERROR
+[PERRO] (5,8) Horizontal_Izquierda
+[RASURADORA] (1,1) Vertical_Abajo
+[AZUCAR] (6,9) Horizontal_Izquierda
