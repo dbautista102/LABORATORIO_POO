@@ -95,7 +95,7 @@ public class ResponderExamen extends javax.swing.JFrame {
             }
         });
 
-        Atras.setText("Atr�s");
+        Atras.setText("Atras");
         Atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AtrasActionPerformed(evt);

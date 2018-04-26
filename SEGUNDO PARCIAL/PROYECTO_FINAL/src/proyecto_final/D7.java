@@ -13,7 +13,6 @@ import static proyecto_final.PanelMostrar.preguntas;
  * @author bautista
  */
 public class D7 extends javax.swing.JFrame {
-    private PreguntasM pm;
     private String nombre;
     private String materia;
     private String matricula;
@@ -36,58 +35,49 @@ public class D7 extends javax.swing.JFrame {
      * Creates new form D7
      */
     public D7() {
-        
         preguntas=new String[PanelMostrar.n];
         arr=new String[PanelMostrar.n][4];
-        rand=new Integer[8];
+        rand=new Integer[PanelMostrar.n2];
         boton=new Integer[PanelMostrar.n];
         pregExamen=rand.length;
         boton1=new Integer[rand.length];
         indices=new Integer[boton.length];
         aciertos=0;
-        
         for (int i = 0; i < boton1.length; i++) {
             boton1[i]=5;
         }
-        
-        
         arr1=new String[rand.length][4];
         contestar=new String[rand.length];
         Random random=new Random();
         for (int i = 0; i < PanelMostrar.n; i++) {
-           
-           preguntas[i]=PanelMostrar.preguntas[i];
-           
+            preguntas[i]=PanelMostrar.preguntas[i];
         }
+       for(int i=0; i<4; i++){
+	for(int j=0; j<PanelMostrar.n; j++){
+            arr[j][i]=HacerPreguntas.preg[j];     
+	}
+	}
+        //Ley de Ampere -Ley de Lenz - Ley de Faraday -Ley de Gauss.
         
-        /*
-        arr[0][0]="-x/y";
-        arr[0][1]="-2x/y";
-        arr[0][2]="-x/2y";
-        arr[0][3]="x/y";
-        boton[0]=1;
-        //-x/y -2x/y -x/2y x/y
-        */
         for (int i = 0; i < rand.length; i++) {
-            rand[i]=random.nextInt(PanelMostrar.n)+1;
+            rand[i]=random.nextInt((PanelMostrar.n)-1)+1;
 //            System.out.print(rand[i]+" ");
             if(i>0){
             for (int j = i-1; -1 < j; j--) {
                 if(rand[i]==rand[j]){
                     do{
-                    rand[i]=random.nextInt(PanelMostrar.n)+1;
+                    rand[i]=random.nextInt((PanelMostrar.n)-1)+1;
                     }while(rand[i]==rand[j]);
                 }
             }
             }
-            //contestar[i]=preguntas[rand[i]];
-            //arr1[i][0]=arr[rand[i]][0];
-            //arr1[i][1]=arr[rand[i]][1];
-            //arr1[i][2]=arr[rand[i]][2];
-            //arr1[i][3]=arr[rand[i]][3];
-            //indices[i]=boton[rand[i]];
+            contestar[i]=preguntas[rand[i]];
+            arr1[i][0]=arr[rand[i]][0];
+            arr1[i][1]=arr[rand[i]][1];
+            arr1[i][2]=arr[rand[i]][2];
+            arr1[i][3]=arr[rand[i]][3];
+            indices[i]=boton[rand[i]];
         }
-    
     
         initComponents();
     
@@ -251,6 +241,7 @@ public class D7 extends javax.swing.JFrame {
         for (int i = 0; i < PanelMostrar.n; i++) {
            
             System.out.println(PanelMostrar.preguntas[i]);
+            System.out.println(HacerPreguntas.preg[i]);
            
         }
         ResponderExamen ventana = new ResponderExamen();
@@ -292,7 +283,18 @@ public class D7 extends javax.swing.JFrame {
             }
         });
     }
-     public String getPregunta(Integer n){
+    public void mostrarPreguntasyRespuestas(){
+        for (int i = 0; i < contestar.length; i++) {
+            System.out.println((i+1)+"."+contestar[i]);
+            System.out.println(arr1[i][0]);
+            System.out.println(arr1[i][1]);
+            System.out.println(arr1[i][2]);
+            System.out.println(arr1[i][3]);
+            System.out.println(indices[i]);
+        }
+    }
+    
+    public String getPregunta(Integer n){
         return contestar[n];
     }
     public String getRespuesta(Integer n,Integer i){
@@ -391,6 +393,7 @@ public class D7 extends javax.swing.JFrame {
     public void setArr(String[][] arr) {
         this.arr = arr;
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField alumno;
     private javax.swing.JTextField carreraT;

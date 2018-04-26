@@ -31,6 +31,7 @@ public class HacerPreguntas extends javax.swing.JFrame {
     private Integer n;
     private PreguntasM pg=new PreguntasM();
     private  Integer aux;
+    public static String preg[];
     
     
     
@@ -411,7 +412,8 @@ public class HacerPreguntas extends javax.swing.JFrame {
         n=a;
         cuenta.setText(" 1/"+n);
     }
-    private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {  
+        preg=new String[100];
         if(pregunta.getText().equals("")){
            JOptionPane.showMessageDialog(this, "Escriba una pregunta.", "Mensaje", 1,null );
         }else if(buttonGroup1.isSelected(null)){
@@ -431,6 +433,7 @@ public class HacerPreguntas extends javax.swing.JFrame {
                 respuesta4.setText(pg.mostrarUna(contador, 3));
                 aux=pg.getbtn(contador);
 //               
+                preg[contador]=respuesta1.getText();
                 Integer btn=pg.getbtn(contador);
                     switch (btn){ 
                             case 1: opcion1.setSelected(true);
