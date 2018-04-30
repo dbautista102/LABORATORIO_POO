@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package poligonos;
+package Model;
 
 /**
  *
- * @author bautista
+ * @author Karen Velasco
  */
 public enum Orientation {
-    COLINEAL,
-    CLOCKWISE,
-    COUNTERCLOCKWISE
+    CounterClockwise,
+    Colinear,
+    Clockwise
 }
